@@ -1,0 +1,8 @@
+nav.nav
+	- var items = [{name:'Home', url:'url-1'}, {name:'About us', url:'url-2'}, {name:'Our Approch', url:'url-3'}, {name:'Our work', url:'url-3'}]
+	- var dataItems = ['header', 'about', 'approach', 'work']
+		each item, key in items
+			if key == 0
+				a.nav__link.nav__link--active(href=item.url data-link=dataItems[key])= item.name
+			else
+				a.nav__link(href=item.url data-link=dataItems[key])= item.name
